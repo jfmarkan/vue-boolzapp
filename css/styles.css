@@ -1,12 +1,37 @@
+body{
+    background: linear-gradient(to top, #d3dbdb, #dddbd1 85%, #009688 85%);
+}
+
 #app{
-    background-color: aqua;
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper{
+    background-color: cornflowerblue;
     height: 900px;
-    width: 1500px;
+    width: 1530px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div.my_profile{
+    background-color: #eaeaea;
 }
 
 div.my_profile img{
     height: 50px;
     border-radius: 50%;
+}
+
+div.my_profile-actions{
+    font-size: 1.5rem;
+}
+
+div.my_profile-actions i{
+    margin-left: 1rem;
 }
 
 div.my_alerts{
@@ -20,4 +45,21 @@ div.my_alerts{
     border-radius: 50%;
     color: #8edafc;
     font-size: 1.5rem;
+}
+
+.my_search{
+    background-color: #fafafa;
+}
+
+.my_active-chat{
+    height: 100%;
+}
+
+.my_active-chat-header,
+.my_active-chat-actions{
+    height: 70px;
+}
+
+.my_active-chat-body{
+    height: calc(100% - 140px);
 }

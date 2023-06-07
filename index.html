@@ -10,44 +10,86 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="app" class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="my_profile d-flex justify-content-between">
-                    <div>
-                        <img src="./img/avatar_io.jpg" alt="">
-                    <span>Sofia</span>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        <div class="d-flex">
+            <div class="wrapper m-auto mt-4">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="my_profile d-flex justify-content-between p-2">
+                            <div>
+                                <img src="./img/avatar_io.jpg" alt="">
+                            <span>Sofia</span>
+                            </div>
+                            <div class="my_profile-actions">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="my_alerts p-3">
+                            <div class="my_icon-bg d-flex">
+                                <i class="fa-solid fa-bell-slash m-auto"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="my_search p-2">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                        </div>
+                        <div class="my_active-chat-list">
+                            <ul class="m-0 p-0">
+                                <li>
+                                    <div class="my_single-active-chat d-flex">
+                                        <div class="my_profile p-2">
+                                            <img src="./img/avatar_1.jpg" alt="">
+                                        </div>
+                                        <div class="my_interlocutor">
+                                            <p class="my_interlocutor-name">Michele</p>
+                                            <p class="my_interlocutor-last-message">Ultimo messagio inviato</p>
+                                        </div>
+                                        <div>
+                                            <p class="hour">12:00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>
-                <div class="my_alerts">
-                    <div class="my_icon-bg d-flex">
-                        <i class="fa-solid fa-bell-slash m-auto"></i>
-                    </div>
-                    
-                </div>
-                <div class="my_search">
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                </div>
-                <div class="my_contact-list">
-                    <ul>
-                        <li>
+                    <div class="col-8 my_active-chat">
+                        <div class="my_active-chat-header">
+                            <div>
 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-8">
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="my_active-chat-body">
 
+                        </div>
+                        <div class="my_active-chat-actions d-flex justify-content-around">
+                            <div>
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="mb-3 w-75">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>
