@@ -168,6 +168,7 @@ createApp({
             ],
             contactIndex: 0,
             newMessage: '',
+            searchChat: '',
         }
     },
     methods:{
@@ -179,13 +180,7 @@ createApp({
         },
 
         messageAnswer(contactIndex){
-            this.contacts[contactIndex].messages.push(
-                {
-                date: new Date(),
-                message: 'OK!',
-                status: 'received'
-                }
-            );
+            
         },
 
         sendNewMessage(contactIndex, message){
@@ -196,7 +191,14 @@ createApp({
                     status: 'sent'
                 });
                 this.newMessage = '';
-                setTimeout(this.messageAnswer, 1000);
+                setTimeout(
+                    this.contacts[contactIndex].messages.push(
+                        {
+                        date: this.dateStamp(),
+                        message: 'OK!',
+                        status: 'received'
+                        }
+                    ), 1000)
             }
         },
 
@@ -230,7 +232,6 @@ createApp({
             }
             
             let formatedDate = `${day}/${month}/${year}` + ' ' + `${hour}:${minute}:${second}`;
-
             return formatedDate
         }
     }
