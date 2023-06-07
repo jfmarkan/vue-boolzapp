@@ -33,6 +33,7 @@ div.my_profile-actions{
 
 div.my_profile-actions i{
     margin-left: 1rem;
+    color: #b1b1b1;
 }
 
 div.my_alerts{
@@ -69,6 +70,15 @@ div.my_alerts{
 .my_active-chat-header,
 .my_active-chat-actions{
     height: 70px;
+}
+
+.my_active-chat-header{
+    background-color: #eaeaea;
+    border-left: 1px solid #d6d6d6;
+}
+
+.my_active-chat-actions{
+    background-color: #f3eeea;
 }
 
 .my_active-chat-body{
