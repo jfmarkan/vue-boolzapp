@@ -167,6 +167,7 @@ createApp({
                 }
             ],
             contactIndex: 0,
+            newMessage: '',
         }
     },
     methods:{
@@ -177,7 +178,62 @@ createApp({
             this.contactIndex = chatIndex;
         },
 
-    },
+        messageAnswer(contactIndex){
+            this.contacts[contactIndex].messages.push(
+                {
+                date: new Date(),
+                message: 'OK!',
+                status: 'received'
+                }
+            );
+        },
+
+        sendNewMessage(contactIndex, message){
+            if (this.newMessage !== ''){
+                this.contacts[contactIndex].messages.push({
+                    date: this.dateStamp(),
+                    message: message,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+                setTimeout(this.messageAnswer, 1000);
+            }
+        },
+
+        dateStamp(){
+            let nowDate = new Date();
+            let day = nowDate.getDate();
+            let month = nowDate.getDate();
+            let year = nowDate.getFullYear();
+            let hour = nowDate.getHours();
+            let minute = nowDate.getMinutes();
+            let second = nowDate.getSeconds();
+
+            if (day < 10) {
+                day = '0' + day;
+            }
+            
+            if (month < 10) {
+                month = `0${month - 1}`;
+            }
+
+            if (hour < 10) {
+                hour = '0' + hour;
+            }
+
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+
+            if (second < 10) {
+                second = '0' + second;
+            }
+            
+            let formatedDate = `${day}/${month}/${year}` + ' ' + `${hour}:${minute}:${second}`;
+
+            return formatedDate
+        }
+    }
 }).mount('#app')
 
 
