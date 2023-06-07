@@ -166,9 +166,16 @@ createApp({
                     ],
                 }
             ],
+            contactIndex: 0,
         }
     },
     methods:{
+        goToContact(chatIndex){
+            if (chatIndex >= this.contacts.length || chatIndex < 0){
+                return 0;
+            }
+            this.contactIndex = chatIndex;
+        },
 
     },
 }).mount('#app')

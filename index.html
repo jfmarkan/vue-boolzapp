@@ -49,7 +49,7 @@
                         </div>
                         <div class="my_active-chat-list">
                             <ul class="m-0 p-0">
-                                <li v-for="(contact, index) in contacts" class="my_active-chat">
+                                <li v-for="(contact, index) in contacts" class="my_active-chat" @click="goToContact(index)">
                                     <div class="my_single-active-chat d-flex justify-content-between py-2 px-3">
                                         <div class="d-flex">
                                             <div class="pe-2">
@@ -72,10 +72,10 @@
                         <div class="my_active-chat-header d-flex justify-content-between">
                             <div class="d-flex">
                                 <div class="my_profile py-2 px-3">
-                                    <img src="./img/avatar_1.jpg" alt="">
+                                    <img :src="contacts[contactIndex].avatar" alt="">
                                 </div>
                                 <div class="my_interlocutor pt-2">
-                                    <p class="my_interlocutor-name p-0 m-0">Michele</p>
+                                    <p class="my_interlocutor-name p-0 m-0">{{contacts[contactIndex].name}}</p>
                                     <p class="my_interlocutor-last-access p-0 m-0">Ultimo accesso oggi alle 12:00</p>
                                 </div>
                             </div>
@@ -85,21 +85,15 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div class="my_active-chat-body pt-4 px-5 d-flex flex-column">
-                            <div class="my_sent-messages">
-                                <div>
-                                    Hello
-                                </div>
-                                <div class="my_hour text-end">
-                                    12:00
-                                </div>
-                            </div>
-                            <div class="my_received-messages">
-                                <div>
-                                    Bye
-                                </div>
-                                <div class="my_hour text-end">
-                                    12:01
+                        <div class="my_active-chat-body pt-4 px-5">
+                            <div v-for="(messages, index) in contacts[contactIndex].messages" class="row d-flex flex-column">
+                                <div :class="messages.status === 'sent' ? 'my_sent-messages' : 'my_received-messages'" class="mb-2">
+                                    <div>
+                                        {{messages.message}}
+                                    </div>
+                                    <div class="my_hour text-end">
+                                        {{messages.date}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
