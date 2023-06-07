@@ -49,14 +49,16 @@
                         </div>
                         <div class="my_active-chat-list">
                             <ul class="m-0 p-0">
-                                <li>
-                                    <div class="my_single-active-chat d-flex">
-                                        <div class="my_profile p-2">
-                                            <img src="./img/avatar_1.jpg" alt="">
-                                        </div>
-                                        <div class="my_interlocutor">
-                                            <p class="my_interlocutor-name">Michele</p>
-                                            <p class="my_interlocutor-last-message">Ultimo messagio inviato</p>
+                                <li v-for="" class="my_active-chat">
+                                    <div class="my_single-active-chat d-flex justify-content-between py-2 px-3">
+                                        <div class="d-flex">
+                                            <div class="pe-2">
+                                                <img src="./img/avatar_1.jpg" alt="">
+                                            </div>
+                                            <div class="my_interlocutor">
+                                                <p class="my_interlocutor-name m-0 p-0">Michele</p>
+                                                <p class="my_interlocutor-last-message m-0 p-0">Ultimo messagio inviato</p>
+                                            </div>
                                         </div>
                                         <div>
                                             <p class="my_hour">12:00</p>
@@ -67,32 +69,48 @@
                         </div>
                     </div>
                     <div class="col-8 m-0 p-0 my_active-chat">
-                        <div class="my_active-chat-header">
-                            <div>
-
+                        <div class="my_active-chat-header d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="my_profile py-2 px-3">
+                                    <img src="./img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="my_interlocutor pt-2">
+                                    <p class="my_interlocutor-name p-0 m-0">Michele</p>
+                                    <p class="my_interlocutor-last-access p-0 m-0">Ultimo accesso oggi alle 12:00</p>
+                                </div>
                             </div>
-                            <div>
+                            <div class="my_active-chat-profile-actions d-flex pe-3 align-items-center">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div class="my_active-chat-body">
-                            <div class="my_own-messages">
-
+                        <div class="my_active-chat-body pt-4 px-5 d-flex flex-column">
+                            <div class="my_sent-messages">
+                                <div>
+                                    Hello
+                                </div>
+                                <div class="my_hour text-end">
+                                    12:00
+                                </div>
                             </div>
-                            <div class="my_others-messages">
-
+                            <div class="my_received-messages">
+                                <div>
+                                    Bye
+                                </div>
+                                <div class="my_hour text-end">
+                                    12:01
+                                </div>
                             </div>
                         </div>
-                        <div class="my_active-chat-actions d-flex justify-content-around">
-                            <div>
+                        <div class="my_active-chat-actions d-flex justify-content-around align-items-center px-4">
+                            <div class="my_emojis">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
-                            <div class="mb-3 w-75">
+                            <div class="my_text-message-imput">
                                 <input type="text" class="form-control" placeholder="Scrivi un messaggio">
                             </div>
-                            <div>
+                            <div class="my_record">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>

@@ -9,29 +9,33 @@ body{
 }
 
 .wrapper{
-    background-color: cornflowerblue;
+    background-color: #FFFFFF;
     height: 900px;
     width: 1530px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 ul{
     list-style-type: none;
 }
 
-div.my_profile{
+.my_profile{
     background-color: #eaeaea;
 }
 
-div.my_profile img{
+div.my_profile img,
+.my_active-chat img{
     height: 54px;
     border-radius: 50%;
 }
 
-div.my_profile-actions{
+div.my_profile-actions,
+.my_active-chat-profile-actions{
     font-size: 1.5rem;
 }
 
-div.my_profile-actions i{
+div.my_profile-actions i,
+.my_active-chat-profile-actions i{
     margin-left: 1rem;
     color: #b1b1b1;
 }
@@ -49,7 +53,6 @@ div.my_alerts{
     font-size: .9rem;
 }
 
-
 .my_icon-bg{
     background-color: #FFFFFF;
     width: 50px;
@@ -63,8 +66,26 @@ div.my_alerts{
     background-color: #fafafa;
 }
 
+.my_interlocutor-name{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.my_interlocutor-last-message,
+.my_interlocutor-last-access{
+    font-size: .8rem;
+    color: #b1b1b1;
+}
+
+.my_hour{
+    font-size: .75rem;
+    color: #b1b1b1;
+}
+
 .my_active-chat{
     height: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .my_active-chat-header,
@@ -87,3 +108,30 @@ div.my_alerts{
     height: calc(100% - 140px);
     overflow-y: scroll;
 }
+
+.my_sent-messages,
+.my_received-messages{
+    border-radius: 10px;
+    padding: .75rem;
+    width: 45%
+}
+
+.my_sent-messages{
+    background-color: #d5f9ba;
+    align-self: end;
+}
+
+.my_received-messages{
+    background-color: #FFFFFF;
+}
+
+.my_text-message-imput{
+    width: 80%;
+}
+
+.my_emojis,
+.my_record{
+    color: #6b7376;
+    font-size: 1.5rem;
+}
+
