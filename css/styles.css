@@ -1,5 +1,6 @@
 body{
     background: linear-gradient(to top, #d3dbdb, #dddbd1 85%, #009688 85%);
+    font-family: 'Lato', sans-serif;
 }
 
 #app{
@@ -22,7 +23,7 @@ div.my_profile{
 }
 
 div.my_profile img{
-    height: 50px;
+    height: 54px;
     border-radius: 50%;
 }
 
@@ -37,6 +38,16 @@ div.my_profile-actions i{
 div.my_alerts{
     background-color: #8edafc;
 }
+
+.my_notification-action p{
+    font-weight: 700;
+}
+
+.my_notification-action a{
+    font-weight: 300;
+    font-size: .9rem;
+}
+
 
 .my_icon-bg{
     background-color: #FFFFFF;
@@ -61,5 +72,8 @@ div.my_alerts{
 }
 
 .my_active-chat-body{
+    background-image: url(../img/mine.jpg);
+    width: 100%;
     height: calc(100% - 140px);
+    overflow-y: scroll;
 }
