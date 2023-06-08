@@ -241,7 +241,7 @@ createApp({
         },
 
         timeShow(){
-            
+
         }
     },
 
@@ -251,7 +251,6 @@ computed: {
                 return contact.name.toLowerCase().includes(this.searchChat);
             });
         },
-
     },
 }).mount('#app')
 
