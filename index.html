@@ -104,8 +104,13 @@
                                 <div class="my_text-message-imput">
                                     <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage(contactIndex, newMessage)">
                                 </div>
-                                <div class="my_record">
-                                    <i class="fa-solid fa-microphone"></i>
+                                <div>
+                                    <div v-if="newMessage === ''" class="my_record">
+                                        <i class="fa-solid fa-microphone"></i>
+                                    </div>
+                                    <div v-else class="my_send" @click="sendNewMessage(contactIndex, newMessage)">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>

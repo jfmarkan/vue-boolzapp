@@ -135,7 +135,8 @@ div.my_alerts{
 }
 
 .my_emojis,
-.my_record{
+.my_record,
+.my_send{
     color: #6b7376;
     font-size: 1.5rem;
 }
