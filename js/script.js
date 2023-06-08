@@ -179,7 +179,12 @@ createApp({
             this.contactIndex = chatIndex;
         },
 
-        
+        getLastMessage(contactIndex, messageIndex){
+            if (this.contacts[contactIndex].messages > 0){
+                messageIndex = this.contact.messages.length;
+            }
+            return contacts.contactIndex.messages.messageIndex.message;
+        },
 
         sendNewMessage(contactIndex, message){
             if (this.newMessage !== ''){
@@ -234,14 +239,20 @@ createApp({
             let formatedDate = `${day}/${month}/${year}` + ' ' + `${hour}:${minute}:${second}`;
             return formatedDate
         },
+
+        timeShow(){
+            
+        }
     },
+
 computed: {
         searchResult() {
             return this.contacts.filter((contact) => {
                 return contact.name.toLowerCase().includes(this.searchChat);
             });
         },
-    }    
+
+    },
 }).mount('#app')
 
 
