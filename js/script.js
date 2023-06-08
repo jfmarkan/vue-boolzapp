@@ -189,7 +189,8 @@ createApp({
                     status: 'sent'
                 });
                 this.newMessage = '';
-                setTimeout(this.messageAnswer, 1000);
+                setTimeout(() => {
+                    this.messageAnswer(contactIndex)}, 1000);
             }
         },
 
