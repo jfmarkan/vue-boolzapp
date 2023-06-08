@@ -179,9 +179,7 @@ createApp({
             this.contactIndex = chatIndex;
         },
 
-        messageAnswer(contactIndex){
-            
-        },
+        
 
         sendNewMessage(contactIndex, message){
             if (this.newMessage !== ''){
@@ -191,15 +189,16 @@ createApp({
                     status: 'sent'
                 });
                 this.newMessage = '';
-                setTimeout(
-                    this.contacts[contactIndex].messages.push(
-                        {
-                        date: this.dateStamp(),
-                        message: 'OK!',
-                        status: 'received'
-                        }
-                    ), 1000)
+                setTimeout(this.messageAnswer, 1000);
             }
+        },
+
+        messageAnswer(contactIndex, messages){
+            this.contacts[contactIndex].messages.push({
+                date: this.dateStamp(),
+                message: 'OK!',
+                status: 'received'
+            });
         },
 
         dateStamp(){
@@ -233,8 +232,15 @@ createApp({
             
             let formatedDate = `${day}/${month}/${year}` + ' ' + `${hour}:${minute}:${second}`;
             return formatedDate
-        }
-    }
+        },
+    },
+computed: {
+        searchResult() {
+            return this.contacts.filter((contact) => {
+                return contact.name.toLowerCase().includes(this.searchChat);
+            });
+        },
+    }    
 }).mount('#app')
 
 
