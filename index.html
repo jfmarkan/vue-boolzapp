@@ -49,7 +49,7 @@
                             </div>
                             <div class="my_active-chat-list">
                                 <ul class="m-0 p-0">
-                                    <li v-for="(contact, index) in contacts" :class="index === contactIndex ? 'selected' : ''" class="my_active-chat" @click="goToContact(index)">
+                                    <li v-for="(contact, index) in searchResult" :class="index === contactIndex ? 'selected' : ''" class="my_active-chat" @click="goToContact(index)">
                                         <div class="my_single-active-chat d-flex justify-content-between py-2 px-3">
                                             <div class="d-flex">
                                                 <div class="pe-2">
@@ -57,7 +57,7 @@
                                                 </div>
                                                 <div class="my_interlocutor">
                                                     <p class="my_interlocutor-name m-0 p-0">{{contact.name}}</p>
-                                                    <p class="my_interlocutor-last-message m-0 p-0">Ultimo messagio inviato</p>
+                                                    <p class="my_interlocutor-last-message m-0 p-0">Ultimo Messagio inviato</p>
                                                 </div>
                                             </div>
                                             <div>
@@ -72,10 +72,10 @@
                             <div class="my_active-chat-header d-flex justify-content-between">
                                 <div class="d-flex">
                                     <div class="my_profile py-2 px-3">
-                                        <img :src="contacts[contactIndex].avatar" alt="">
+                                        <img :src="searchResult[contactIndex].avatar" alt="">
                                     </div>
                                     <div class="my_interlocutor pt-2">
-                                        <p class="my_interlocutor-name p-0 m-0">{{contacts[contactIndex].name}}</p>
+                                        <p class="my_interlocutor-name p-0 m-0">{{searchResult[contactIndex].name}}</p>
                                         <p class="my_interlocutor-last-access p-0 m-0">Ultimo accesso oggi alle 12:00</p>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="my_active-chat-body pt-4 px-5">
-                                <div v-for="(messages, index) in contacts[contactIndex].messages" class="row d-flex flex-column">
+                                <div v-for="(messages, index) in searchResult[contactIndex].messages" class="row d-flex flex-column">
                                     <div :class="messages.status === 'sent' ? 'my_sent-messages' : 'my_received-messages'" class="mb-2">
                                         <div>
                                             {{messages.message}}

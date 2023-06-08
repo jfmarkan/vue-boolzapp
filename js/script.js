@@ -183,7 +183,7 @@ createApp({
 
         sendNewMessage(contactIndex, message){
             if (this.newMessage !== ''){
-                this.contacts[contactIndex].messages.push({
+                this.searchResult[contactIndex].messages.push({
                     date: this.dateStamp(),
                     message: message,
                     status: 'sent'
@@ -194,8 +194,8 @@ createApp({
             }
         },
 
-        messageAnswer(contactIndex, messages){
-            this.contacts[contactIndex].messages.push({
+        messageAnswer(contactIndex){
+            this.searchResult[contactIndex].messages.push({
                 date: this.dateStamp(),
                 message: 'OK!',
                 status: 'received'
